@@ -9,13 +9,13 @@
   <body>
     <header id="header">
       <a href="#" class="logo">LOGO</a>
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul id="nav-list">
+        <li><a href="#home" class="link active">Home</a></li>
+        <li><a href="#about" class="link">About</a></li>
+        <li><a href="#services" class="link">Services</a></li>
+        <li><a href="#portfolio" class="link">Portfolio</a></li>
+        <li><a href="#team" class="link">Team</a></li>
+        <li><a href="#contact" class="link">Contact</a></li>
       </ul>
       <div class="toggle" onclick="toggle() "></div>
     </header>
@@ -115,6 +115,16 @@
       function toggle() {
         var header = document.getElementById("header");
         header.classList.toggle("active");
+      }
+
+      var header = document.getElementById("nav-list");
+      var btns = header.getElementsByClassName("link");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
       }
     </script>
   </body>
