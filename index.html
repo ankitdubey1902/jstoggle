@@ -19,7 +19,7 @@
       </ul>
       <div class="toggle" onclick="toggle() "></div>
     </header>
-    <section id="home">
+    <section id="home" class="section">
       <div>
         <h2>Responsive Website</h2>
         <p>
@@ -36,7 +36,7 @@
       </div>
       <img src="img.jpg" alt="img" />
     </section>
-    <section id="about">
+    <section id="about" class="section">
       <div>
         <h2>About Us</h2>
         <p>
@@ -51,7 +51,7 @@
         </p>
       </div>
     </section>
-    <section id="services">
+    <section id="services" class="section">
       <div>
         <h2>Our Services</h2>
         <p>
@@ -66,7 +66,7 @@
         </p>
       </div>
     </section>
-    <section id="portfolio">
+    <section id="portfolio" class="section">
       <div>
         <h2>Our Recent Work</h2>
         <p>
@@ -81,7 +81,7 @@
         </p>
       </div>
     </section>
-    <section id="team">
+    <section id="team" class="section">
       <div>
         <h2>Our Expert</h2>
         <p>
@@ -96,7 +96,7 @@
         </p>
       </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="section">
       <div>
         <h2>Contact</h2>
         <p>
@@ -126,6 +126,33 @@
           this.className += " active";
         });
       }
+
+      (function () {
+        "use strict";
+
+        var section = document.querySelectorAll(".section");
+        var sections = {};
+        var i = 0;
+        var headerHeight = 80;
+
+        Array.prototype.forEach.call(section, function (e) {
+          sections[e.id] = e.offsetTop - headerHeight;
+        });
+
+        window.onscroll = function () {
+          var scrollPosition =
+            document.documentElement.scrollTop || document.body.scrollTop;
+
+          for (i in sections) {
+            if (sections[i] <= scrollPosition) {
+              document.querySelector(".active").setAttribute("class", " ");
+              document
+                .querySelector("a[href*=" + i + "]")
+                .setAttribute("class", "active");
+            }
+          }
+        };
+      })();
     </script>
   </body>
 </html>
