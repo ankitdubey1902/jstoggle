@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Responsive Website Design for Beginners</title>
   </head>
   <body>
@@ -21,8 +24,10 @@
     </header>
     <section id="home" class="section">
       <div>
-        <h2>Responsive Website</h2>
-        <p>
+        <h2 data-aos="fade-down" data-aos-duration="1500">
+          Responsive Website
+        </h2>
+        <p data-aos="fade-up" data-aos-duration="1500">
           With html css js Lorem ipsum, dolor sit amet consectetur adipisicing
           elit. Repellat debitis architecto consequuntur numquam quo quaerat
           nobis laboriosam voluptatum, itaque eum expedita nemo tenetur. Quasi
@@ -32,12 +37,17 @@
           itaque, doloremque asperiores facilis harum nostrum. Consequuntur,
           molestias?
         </p>
-        <a href="#">Read More</a>
+        <a data-aos="fade-up" data-aos-duration="1500" href="#">Read More</a>
       </div>
-      <img src="img.jpg" alt="img" />
+      <img
+        src="img.jpg"
+        alt="img"
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+      />
     </section>
     <section id="about" class="section">
-      <div>
+      <div data-aos="fade-right" data-aos-duration="1500">
         <h2>About Us</h2>
         <p>
           With html css js Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -52,7 +62,7 @@
       </div>
     </section>
     <section id="services" class="section">
-      <div>
+      <div data-aos="fade-left" data-aos-duration="1500">
         <h2>Our Services</h2>
         <p>
           With html css js Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -67,7 +77,7 @@
       </div>
     </section>
     <section id="portfolio" class="section">
-      <div>
+      <div data-aos="fade-right" data-aos-duration="1500">
         <h2>Our Recent Work</h2>
         <p>
           With html css js Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -82,7 +92,7 @@
       </div>
     </section>
     <section id="team" class="section">
-      <div>
+      <div data-aos="fade-left" data-aos-duration="1500">
         <h2>Our Expert</h2>
         <p>
           With html css js Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -97,7 +107,7 @@
       </div>
     </section>
     <section id="contact" class="section">
-      <div>
+      <div data-aos="fade-right" data-aos-duration="1500">
         <h2>Contact</h2>
         <p>
           With html css js Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -112,6 +122,8 @@
       </div>
     </section>
     <script type="text/javascript">
+      AOS.init(); //initalize AOS
+
       function toggle() {
         var header = document.getElementById("header");
         header.classList.toggle("active");
